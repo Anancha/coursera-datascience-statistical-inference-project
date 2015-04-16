@@ -7,6 +7,7 @@ In this project you will investigate the exponential distribution in R and compa
 
 Illustrate via simulation and associated explanatory text the properties of the distribution of the mean of 40 exponentials.
 You should
+
 1. Show the sample mean and compare it to the theoretical mean of the distribution.
 2. Show how variable the sample is (via variance) and compare it to the theoretical variance of the distribution.
 3. Show that the distribution is approximately normal.
