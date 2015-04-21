@@ -14,5 +14,4 @@ mns <- as.data.frame(mns)
 ggplot(mns, aes(mns)) + geom_histogram(binwidth = 0.3, colour = "white", fill = "skyblue4") + labs(y = "Frequency", x = "Mean") + geom_vline(xintercept = 1 / lambda)
 
 # Exporting as "histogram1.png"
-ggsave(file="histogram1.png", scale = 0.75)
-?ggsave
+ggsave(file="histogram1.png")
