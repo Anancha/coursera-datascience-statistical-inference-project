@@ -20,3 +20,6 @@ for (i in 1 : 1000) mns = c(mns, mean(rexp(40, lambda)))
 ```
 
 ### 1. Sample Mean vs. Theoretical Mean
+The chart below shows the histogram of the averages of our 1000 simulated means of 40 exponentials.
+
+![Histogram of means of 40 exponentials](https://github.com/dannychan0510/coursera-datascience-statistical-inference-project/blob/master/histogram1.png?raw=true)
