@@ -20,7 +20,14 @@ for (i in 1 : 1000) mns = c(mns, mean(rexp(40, lambda)))
 ```
 
 ### 1. Sample Mean vs. Theoretical Mean
-The chart below shows the histogram of the averages of our 1000 simulated means of 40 exponentials. The black line indicates the theoretical mean of the distribution, which is 5 (remember, the theoretical mean of an exponential distribution is 1/λ, and λ = 0.2 currently).
+The chart below shows the histogram of the averages of our 1000 simulated means of 40 exponentials. The black line indicates the theoretical mean of the distribution, which is 5 (remember, the theoretical mean of an exponential distribution is 1/λ, and λ = 0.2 currently). Already, we can see graphically that our sample mean (as shown by the center of mass in the histogram) is very close to our theoretical mean (as shown by the black vertical line).
 
+#### Histogram of the means of 40 exponentials
 ![Histogram of means of 40 exponentials](https://github.com/dannychan0510/coursera-datascience-statistical-inference-project/blob/master/histogram1.png?raw=true)
 
+Specially, our sample mean is:
+```
+> mean(mns)
+[1] 5.011911
+```
+which is very close to our theoretical mean of 5.
