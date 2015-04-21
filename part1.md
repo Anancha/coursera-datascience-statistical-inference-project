@@ -31,3 +31,6 @@ Specially, our sample mean is:
 [1] 5.011911
 ```
 which is very close to our theoretical mean of 5.
+
+### 2. Sample Variance vs. Theoretical Variance
+
