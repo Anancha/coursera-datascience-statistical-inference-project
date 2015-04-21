@@ -1,12 +1,13 @@
 > setwd("~/Documents/GitHub/coursera-datascience-statistical-inference-project")
 
-set.seed(23)
+lamda <- 0.2
+
+set.seed(100)
 mns = NULL
-for (i in 1 : 1000) mns = c(mns, mean(rexp(40, 1/0.2)))
+for (i in 1 : 1000) mns = c(mns, mean(rexp(40, lamda)))
+
+mean(mns)
 hist(mns)
 
 
-set.seed(23)
-vrc = NULL
-for (i in 1 : 1000) vrc = c(vrc, var(rexp(40, 1/0.2)))
-hist(vrc, breaks = 50)
+var(mns)
