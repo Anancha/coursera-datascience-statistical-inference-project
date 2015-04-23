@@ -13,6 +13,8 @@ library(ggplot2)
 dB <- as.data.frame(mns)
 ggplot(dB, aes(mns)) + geom_histogram(binwidth = 0.3, colour = "white", fill = "skyblue4") + labs(y = "Frequency", x = "Mean") + geom_vline(xintercept = 1 / lambda)
 
+ggsave("histogram2.png")
+
 # Exporting as "histogram1.png"
 ggsave(file="histogram1.png")
 
@@ -22,5 +24,8 @@ mean(mns)
 # Overlaying normal distribution on top of histogram
 ggplot(dB, aes(mns)) + geom_histogram(aes(y = ..density..), binwidth = 0.3, colour = "white", fill = "skyblue4") + labs(y = "Density", x = "Mean") + geom_vline(xintercept = 1 / lambda) + stat_function(fun = dnorm, args = list(mean = 5, sd = (0.625)^0.5))
 
+ggsave("histogram2.png")
+
 # q-q plot
 qqnorm(mns); qqline(mns)
+
