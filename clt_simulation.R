@@ -1,4 +1,4 @@
-> setwd("~/Documents/GitHub/coursera-datascience-statistical-inference-project")
+setwd("~/Documents/GitHub/coursera-datascience-statistical-inference-project")
 
 # Setting the value of lambda
 lambda <- 0.2
@@ -28,4 +28,3 @@ ggsave("histogram2.png")
 
 # q-q plot
 qqnorm(mns); qqline(mns)
-
