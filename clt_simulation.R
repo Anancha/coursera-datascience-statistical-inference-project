@@ -18,3 +18,9 @@ ggsave(file="histogram1.png")
 
 # Obtaining the sample mean
 mean(mns)
+
+# Overlaying normal distribution on top of histogram
+ggplot(dB, aes(mns)) + geom_histogram(aes(y = ..density..), binwidth = 0.3, colour = "white", fill = "skyblue4") + labs(y = "Density", x = "Mean") + geom_vline(xintercept = 1 / lambda) + stat_function(fun = dnorm, args = list(mean = 5, sd = (0.625)^0.5))
+
+# q-q plot
+qqnorm(mns); qqline(mns)
