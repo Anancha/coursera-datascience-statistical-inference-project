@@ -33,4 +33,22 @@ Specially, our sample mean is:
 which is very close to our theoretical mean of 5.
 
 ### 2. Sample Variance vs. Theoretical Variance
+The theoretical variance of the distribution of means of 40 exponentials is given by:
+```
+> ((1/lambda)/sqrt(40))^2
+[1] 0.625
+```
+And the sample variance of the distribution of means of 40 exponentials is:
+```
+> var(mns)
+[1] 0.6004928
+```
+The theoretical variance (0.625) is therefore very close to the sample vairance (0.60) in this example.
 
+
+### 3. Distribution
+Due to the central limit theorem, the averages of samples follow normal distribution. The figure below shows the density histogram of our distribution of averages, and overlays a normal distribution of N~(5, (0.625)^0.5).
+
+
+
+Also, the q-q plot below suggests the normality.
