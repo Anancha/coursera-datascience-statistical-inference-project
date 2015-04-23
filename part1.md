@@ -48,7 +48,6 @@ The theoretical variance (0.625) is therefore very close to the sample vairance 
 
 ### 3. Distribution
 Due to the central limit theorem, the averages of samples follow normal distribution. The figure below shows the density histogram of our distribution of averages, and overlays a normal distribution of N~(5, (0.625)^0.5).
-
-
-
-Also, the q-q plot below suggests the normality.
+![Histogram of means of 40 exponentials](https://github.com/dannychan0510/coursera-datascience-statistical-inference-project/blob/master/histogram2.png?raw=true)
+Also, the q-q plot below suggests the the distribution of the averages of 40 exponentials follow a normal distribution
+![Histogram of means of 40 exponentials](https://github.com/dannychan0510/coursera-datascience-statistical-inference-project/blob/master/qqplot1.png?raw=true)
