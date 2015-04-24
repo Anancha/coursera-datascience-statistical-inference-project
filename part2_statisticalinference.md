@@ -20,3 +20,16 @@ Now let's get a summary of the data using R's `summary` function.
  3rd Qu.:25.27           3rd Qu.:2.000  
  Max.   :33.90           Max.   :2.000  
  ```
+
+
+
+```
+library (ggplot2)
+ggplot(data=ToothGrowth, aes(x=as.factor(dose), y=len, fill=supp)) +
+    geom_bar(stat="identity",) +
+    facet_grid(. ~ supp) +
+    xlab("Dosage (in mg)") +
+    ylab("Length of Tooth") +
+    guides(fill=guide_legend(title="Supplement Type"))
+```
+![Histogram of means of 40 exponentials](https://github.com/dannychan0510/coursera-datascience-statistical-inference-project/blob/master/toothgrowthplot.png?raw=true)
