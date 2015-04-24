@@ -68,3 +68,20 @@ Test 2: 0.5mg vs 2mg:  0.0e+00 -18.156167 -12.833833
 Test 3: 1mg vs 2mg:    1.9e-05  -8.996481  -3.733519
 ```
 The null hypothesis of the first test is that there is no difference between the length of teeth between the guinea pigs that have been administered 0.5mg of supplements vs. guinea pigs that have been administered 1mg of supplements. Similar interpretations of the null hypothesis can be made for Tests 2 and 3 (with the dosage amount changing). As the p-values for all 3 tests are extremely small (in fact, smaller than 0.05 in all 3 cases), we can reject all 3 null hypotheses - i.e., teeth length between the guinea pigs vary by the dosage amounts of supplements administered to the guinea pigs.
+
+### 3. Testing between supplement groups within a given dosage
+Now let us test first whether there is any statistical differences between supplement groups *within* a given dosage groups. To achieve this, we can conduct a non-paired t-test between each of the supplement groups within the 0.5mg, 1.0mg and 2.0mg sample.
+```
+> # Conducting a t-test for difference between supplement groups within each dosage group, and putting it in a table for display
+> t05 <- t.test(len ~ supp, paired = F, var.equal = F, data = df05)
+> t10 <- t.test(len ~ supp, paired = F, var.equal = F, data = df10)
+> t20 <- t.test(len ~ supp, paired = F, var.equal = F, data = df20)
+> 
+> t3.summary <- data.frame("p-value" = c(t05$p.value, t10$p.value, t20$p.value), "CI-Lower"=c(t05$conf[1], t10$conf[1], t20$conf[1]), "CI-Upper"=c(t05$conf[2], t10$conf[2], t20$conf[2]), row.names=c("Test 1: 0.5mg OJ vs. VC: ", "Test 2: 1mg OJ vs. VC: ","Test 3: 2mg OJ vs. VC: "))
+> round(t3.summary, 6)
+                           p.value  CI.Lower CI.Upper
+Test 1: 0.5mg OJ vs. VC:  0.006359  1.719057 8.780943
+Test 2: 1mg OJ vs. VC:    0.001038  2.802148 9.057852
+Test 3: 2mg OJ vs. VC:    0.963852 -3.798070 3.638070
+```
+The null hypothesis of the first test is that there is no difference between the length of teeth between the guinea pigs that have been administered 0.5mg OJ vs 0.5mg VC.  Similar interpretations of the null hypothesis can be made for Tests 2 and 3 (with the dosage amount changing). As the p-values for the first two tests are extremely small ( fact, smaller than 0.05 in both cases), we can reject the first two null hypotheses - i.e., teeth length between the guinea pigs vary between supplement groups (within 0.5mg and 1.0mg samples). The p-value for the third test is very high, so we fail to reject the null hypothesis that teeth length between guinea pigs who have been administered 2mg of OJ is different from those who have been administered 2mg of VC at the 95% level.
