@@ -20,9 +20,7 @@ Now let's get a summary of the data using R's `summary` function.
  3rd Qu.:25.27           3rd Qu.:2.000  
  Max.   :33.90           Max.   :2.000  
  ```
-
-
-
+Seems like that it would be interesting to explore whether there is a change in the length of the tooth of the guinea pig given different supplements and dosage - let's make a chart to look at this visually! We will use the R's amazing `ggplot2` library to help us with this.
 ```
 library (ggplot2)
 ggplot(data=ToothGrowth, aes(x=as.factor(dose), y=len, fill=supp)) +
@@ -33,3 +31,4 @@ ggplot(data=ToothGrowth, aes(x=as.factor(dose), y=len, fill=supp)) +
     guides(fill=guide_legend(title="Supplement Type"))
 ```
 ![Histogram of means of 40 exponentials](https://github.com/dannychan0510/coursera-datascience-statistical-inference-project/blob/master/toothgrowthplot.png?raw=true)
+As we can see, guinea pigs which were given 0.5mg and 1mg dosages of OJ supplement seems to experience more tooth growth than those guinea pigs which were given the same dosages of VC treatment. There does not seem to be a noticeable difference between the tooth growth between guinea pigs who were given 2mg dosages of OJ vs. guinea pigs who were given 2mg dosages of VC. 
