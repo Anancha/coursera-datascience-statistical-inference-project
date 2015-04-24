@@ -36,6 +36,12 @@ As we can see, guinea pigs which were given 0.5mg and 1mg dosages of OJ suppleme
 Let's test for whether this really is the case using proper statistical inference.
 
 ## Statistical inference
+### Assumptions
+- There are small sample sizes, so the t-test is appropriate. 
+- A general assumption will be that variances are not equal and just let R do the work to figure out the sample variance and apply it to the statistic. 
+
+NOTE: Confidence intervals, p-values, etc. will only be reported, saving the Conclusion section to summarize the results.
+
 ### 1. Testing between supplement groups
 Let us test first whether there is any statistical differences between the two supplement groups. To achieve this, we can conduct a non-paired t-test.
 ```
